@@ -1,14 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import useUsers from "../hooks/useUsers";
 
 const Users = () => {
   const { data, loading, error } = useUsers();
   const users = data && data.users;
-
-  console.log("====================================");
-  console.log(users, loading, error);
-  console.log("====================================");
+  const navigate = useNavigate();
 
   if (loading) {
     return (
@@ -59,11 +57,17 @@ const Users = () => {
               } = user;
 
               return (
-                <tr key={id} className="bg-gray-50 hover:bg-gray-200">
+                <tr
+                  onClick={() => {
+                    navigate(`/users/${id}/posts`);
+                  }}
+                  key={id}
+                  className="bg-gray-50 hover:bg-gray-200"
+                >
                   <td className="p-5 text-sm text-gray-700 whitespace-nowrap">
                     {id}
                   </td>
-                  <td className="p-5 text-sm text-gray-700 whitespace-nowrap hover:underline cursor-pointer">{`${firstName} ${lastName}`}</td>
+                  <td className="p-5 text-sm text-gray-700 whitespace-nowrap hover:underline cursor-pointer hover:text-indigo-600">{`${firstName} ${lastName}`}</td>
                   <td className="p-5 text-sm text-gray-700 whitespace-nowrap">
                     {email}
                   </td>
