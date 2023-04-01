@@ -1,14 +1,20 @@
+import { Route, Routes } from "react-router-dom";
+
 import "./App.css";
 import Nav from "./components/Navbar/Nav";
+import Home from "./pages/Home";
+import Users from "./pages/Users";
 
 function App() {
   return (
-    <>
+    <div className="bg-indigo-100 p-20">
       <Nav />
-      <div className="bg-indigo-100 w-full h-screen flex items-center justify-center">
-        <h1 className="text-3xl">React Developer Coding Assessment</h1>
-      </div>
-    </>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/users" element={<Users />} />
+      </Routes>
+    </div>
   );
 }
 
