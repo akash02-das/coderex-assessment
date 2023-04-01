@@ -9,7 +9,7 @@ import Users from "./pages/Users";
 
 function App() {
   return (
-    <div className="bg-indigo-100 p-20">
+    <div className="bg-indigo-100 p-10 sm:p-20">
       <Nav />
 
       <Routes>
