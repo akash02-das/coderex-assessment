@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+import Loader from "../components/Loader/Loader";
 import useUsers from "../hooks/useUsers";
 
 const Users = () => {
@@ -9,11 +10,7 @@ const Users = () => {
   const navigate = useNavigate();
 
   if (loading) {
-    return (
-      <div className="w-full h-screen flex items-center justify-center">
-        <h1 className="text-3xl">Loading...</h1>
-      </div>
-    );
+    return <Loader />;
   }
 
   if (error) {

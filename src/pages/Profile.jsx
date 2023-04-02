@@ -1,4 +1,6 @@
 import React from "react";
+
+import Loader from "../components/Loader/Loader";
 import Posts from "../components/Posts/Posts";
 import useUser from "../hooks/useUser";
 
@@ -7,11 +9,7 @@ const Profile = () => {
   const posts = data && data.posts;
 
   if (loading) {
-    return (
-      <div className="w-full h-screen flex items-center justify-center">
-        <h1 className="text-3xl">Loading...</h1>
-      </div>
-    );
+    return <Loader />;
   }
 
   if (error) {
@@ -23,13 +21,15 @@ const Profile = () => {
       <div>
         <h2 className="text-lg sm:text-3xl text-blue-800 mb-5">
           <i className="fa-solid fa-user-tie mr-3"></i>{" "}
-          {`${user?.firstName} ${user?.lastName}`}
+          {!user ? "" : `${user?.firstName} ${user?.lastName}`}
         </h2>
         <p className="text-md sm:text-xl">
-          <i className="fa-solid fa-envelope mr-3"></i> {user?.email}
+          <i className="fa-solid fa-envelope mr-3"></i>{" "}
+          {!user ? "" : user.email}
         </p>
         <p className="text-md sm:text-xl mt-5">
-          <i className="fa-solid fa-landmark mr-3"></i> {user?.company.name}
+          <i className="fa-solid fa-landmark mr-3"></i>{" "}
+          {!user ? "" : user.company.name}
         </p>
       </div>
 
@@ -37,7 +37,7 @@ const Profile = () => {
 
       <div className="flex items-center text-lg sm:text-2xl">
         <i className="fa-solid fa-user-pen mr-3"></i>
-        <h1>{`${user?.firstName}'s all posts`}</h1>
+        <h1>{!user ? "" : `${user?.firstName}'s all posts`}</h1>
       </div>
 
       <Posts posts={posts} />
