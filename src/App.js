@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
 import "./App.css";
+import Footer from "./components/Footer/Footer";
 import Nav from "./components/Navbar/Nav";
 import Error from "./pages/Error";
 import Home from "./pages/Home";
@@ -18,6 +19,8 @@ function App() {
         <Route path="/users/:userId/posts" element={<Profile />} />
         <Route path="*" element={<Error />} />
       </Routes>
+
+      <Footer />
     </div>
   );
 }

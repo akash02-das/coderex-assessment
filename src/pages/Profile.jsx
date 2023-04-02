@@ -17,7 +17,7 @@ const Profile = () => {
   }
 
   return (
-    <div className="w-full min-h-screen mt-20">
+    <div className="w-full min-h-screen mt-10">
       <div>
         <h2 className="text-lg sm:text-3xl text-blue-800 mb-5">
           <i className="fa-solid fa-user-tie mr-3"></i>{" "}

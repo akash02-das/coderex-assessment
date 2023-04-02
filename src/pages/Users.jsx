@@ -18,12 +18,12 @@ const Users = () => {
   }
 
   return (
-    <div className="w-full h-auto mt-20">
+    <div className="w-full h-auto mt-10">
       <h1 className="text-3xl mb-2">All Users List</h1>
 
       <div
         className="overflow-auto rounded-lg shadow"
-        style={{ height: "75vh" }}
+        style={{ height: "70vh" }}
       >
         <table className="w-full">
           <thead className="bg-gray-800 border-b-2 border-gray-200 sticky top-0">
