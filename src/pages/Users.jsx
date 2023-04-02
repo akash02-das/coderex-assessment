@@ -19,7 +19,7 @@ const Users = () => {
 
   return (
     <div className="w-full h-auto mt-10">
-      <h1 className="text-3xl mb-2">All Users List</h1>
+      <h1 className="text-lg sm:text-3xl mb-2">All Users List</h1>
 
       <div
         className="overflow-auto rounded-lg shadow"
@@ -43,7 +43,7 @@ const Users = () => {
             </tr>
           </thead>
 
-          <tbody>
+          <tbody className="divide-y">
             {users?.map((user) => {
               const {
                 id,
